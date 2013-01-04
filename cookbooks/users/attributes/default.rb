@@ -1,10 +1,13 @@
-default[:user] = "webmaster"
-default[:users][:authorized_keys] = [
+default["user"] = "webmaster"
+default["users"]["authorized_keys"] = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3xHogjIU32nk9M701H6wX4AwkQXt0GHqb0PFhs8zeodHAqpFZchAaGrqGcXenjwstuk7aNAEG2j/7UzMsSMYwpwWGVKEkwFlcMs2277vd07t+pnUL5evW4tl1JGbAa0+DYgJpOdIDx2fN8xp4NCDgR8dsRNP+iPwIHsanfBJgOdKRnX+ckKa2o9CNxx7qcIZSRRF2oq4ehgwqDG2CCuG+YnSQg722+zKyM656uo/pWkwM34tO8r7sX5kA31pyuK4FfzPsG/NY2LmyW7Wf/ZqO77LGws4PcXQUxuQ53vzKS6lJHqyFJDBSU91fiF90to8fNGUlmAW9u1vYU4gW4KnP",
     "sh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/FRk2ro0qMtqbpQ7I8jJWM8sA9SFx8zZ2draGfTox2D2iwQpdUzBPEqPhg6Lg0zIkgS59RQTxP4r8Jr7FMZl8VreCZCF9HxKKVxbks/8wK8o/ofVTwkLxeIZ/CK4OTdbW/9dmrg9ra8nbbDfU6bOVw2S9FM7os6jleomSZygLlw7aMY5WPWsTj7YVKJ6VSLKOhBug7U+Vq3pkgP7HDn3JSF3tlWQymhYY7HY3ZolijZfOCGtARx0MgI0I8wan5+HELkHInp5vOSc25E96sWbsPufa/hyxaN+J2rN/1ZRfWoR+dJ2HLQtvmH1+3DZV6lfj9kfkgF0ApMxN4ve0gCSt",
     "AAAAB3NzaC1yc2EAAAADAQABAAABAQDXQDtz0rSRmN+Hxd2jy86+OLe7/UW0XcTvzSCBMNvXkHdJ+AXpuomVX3q0uIZZSDKVLfDkrFhKRNsQBtZ4dpr5x6ux4TinTMX9K6nKaBAnrZmL9pPmR3Xu0Ze9WB8UhEdJ0weSTFdJm9xydVlwap7yMm+B1YvLTDdLDSeeit0WTNfnPintCR3vjUimIzwPa0ZyQPqO9cQ9pnSvICyziAYetGNOZKMpnCpqXaDb9QTWcl5GiT613Wr7Xe5apwFUqSi/jMr7tXQi89i9Ad9a5ho+Xb+MS1YYf728/doBx3kp+pPLvV9ArXKxGWinXcs6xxHMq2LlQ1wj/OKqF2P+UUBp"
   ]
-default[:users][:known_hosts] = [
+default["users"]["known_hosts"] = [
     "|1|JvNizuG35h12UsAZfQSfk3tj+4M=|h/ARi8//nLCqu1io5L8zVj7QRMU= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfx1PHDgoj/tvCNT06QUKdCHxPscaSYbpmT5s2UtcqCEgU4MZ0PnCaPW0RRnjWfoHeHDHKxeqx9U0+o77Sawvc3HvGjkS3duhadcvzlU/BkGqv57hx2JvS+CMNvhtJga0f5IZEUhXi2OHzqlGdJU7BgDf5/kcclqnQFVdZFlhTX4OeM3RX2zGXpYL19MPThwOSMHrlh57icYiPVk7Y3sKTIVT5qYCLZIAXjGkJWmLLguL64e81M6pzoOUtp10lxsH9Bcduk8qiZdZeK1zg2TuQFVTIzfZwuXcxqBnCMjj7uHzNBTcU4yzdh3g75yk4eRfv3hD+5oRScYcJdT6xHBjP",
     "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
   ]
+
+default["authorization"]["sudo"]["groups"] = ["sudo"]
+default["authorization"]["sudo"]["users"] = [node["user"]]
