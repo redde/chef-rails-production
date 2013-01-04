@@ -10,6 +10,18 @@ user node['user'] do
   not_if("ls /home | grep #{node['user']}")
 end
 
+group node["authorization"]["sudo"]["groups"].first do
+  action :modify
+  members node['user']
+end
+
+group node["authorization"]["sudo"]["groups"].first do
+  action :modify
+  members "vagrant"
+  append true
+  not_if ("ls /home | grep vagrant}")
+end
+
 execute "generate ssh key for user" do
   user "webmaster"
   command "ssh-keygen -t rsa -q -f /home/#{node['user']}/.ssh/id_rsa -P \"\""
@@ -21,7 +33,7 @@ template "/home/#{node['user']}/.ssh/authorized_keys" do
   owner node['user']
   source "keys.erb"
   mode 0600
-  variables {:keys => node[:users][:authorized_keys]}
+  variables({:keys => node["users"]["authorized_keys"]})
 end
 
 template "/home/#{node['user']}/.ssh/known_hosts" do
@@ -29,5 +41,5 @@ template "/home/#{node['user']}/.ssh/known_hosts" do
   owner node['user']
   source "keys.erb"
   mode 0600
-  variables {:keys => node[:users][:known_hosts]}
+  variables({:keys => node["users"]["known_hosts"]})
 end
