@@ -1,0 +1,6 @@
+name "users"
+version "0.1.0"
+description "Chef recipe for ubuntu/debian server configuration for rails production stack. Part of chef-rails-production"
+maintainer "Oleg Bovykin"
+maintainer_email "oleg.bovykin@gmail.com"
+depends "sudo"

@@ -4,5 +4,4 @@ description "Chef recipe for ubuntu/debian server configuration for rails produc
 maintainer "Oleg Bovykin"
 maintainer_email "oleg.bovykin@gmail.com"
 depends "apt"
-depends "sudo"
 depends "users"
