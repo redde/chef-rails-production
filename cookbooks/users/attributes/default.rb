@@ -7,7 +7,3 @@ default["users"]["known_hosts"] = [
     "|1|JvNizuG35h12UsAZfQSfk3tj+4M=|h/ARi8//nLCqu1io5L8zVj7QRMU= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfx1PHDgoj/tvCNT06QUKdCHxPscaSYbpmT5s2UtcqCEgU4MZ0PnCaPW0RRnjWfoHeHDHKxeqx9U0+o77Sawvc3HvGjkS3duhadcvzlU/BkGqv57hx2JvS+CMNvhtJga0f5IZEUhXi2OHzqlGdJU7BgDf5/kcclqnQFVdZFlhTX4OeM3RX2zGXpYL19MPThwOSMHrlh57icYiPVk7Y3sKTIVT5qYCLZIAXjGkJWmLLguL64e81M6pzoOUtp10lxsH9Bcduk8qiZdZeK1zg2TuQFVTIzfZwuXcxqBnCMjj7uHzNBTcU4yzdh3g75yk4eRfv3hD+5oRScYcJdT6xHBjP",
     "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
   ]
-
-default["authorization"]["sudo"]["groups"] = ["sudo"]
-default["authorization"]["sudo"]["users"] = [node["user"]]
-default['authorization']['sudo']['passwordless'] = true
