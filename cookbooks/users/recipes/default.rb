@@ -19,13 +19,15 @@ end
 template "/home/#{node['user']}/.ssh/authorized_keys" do
   user node['user']
   owner node['user']
-  source "authorized_keys"
+  source "keys.erb"
   mode 0600
+  variables {:keys => node[:users][:authorized_keys]}
 end
 
 template "/home/#{node['user']}/.ssh/known_hosts" do
   user node['user']
   owner node['user']
-  source "known_hosts"
+  source "keys.erb"
   mode 0600
+  variables {:keys => node[:users][:known_hosts]}
 end
