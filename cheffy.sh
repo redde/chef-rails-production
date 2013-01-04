@@ -1,0 +1,1 @@
+chef-solo -c /cookbooks/solo.rb -j /cookbooks/node.json -l debug;
