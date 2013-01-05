@@ -1,0 +1,9 @@
+#
+# /etc/sysctl.conf - Configuration file for setting system variables
+# See /etc/sysctl.d/ for additonal system variables
+# See sysctl.conf (5) for information.
+#
+
+<% node[:sysctl][:parameters].each do |key,value| -%>
+<%= key %> = <%= value %>
+<% end -%>

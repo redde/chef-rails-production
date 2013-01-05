@@ -57,3 +57,16 @@ logrotate_app node["app_name"] do
   rotate 30
   create "644 webmaster adm"
 end
+
+service 'procps' do
+  supports :restart => true
+  action :nothing
+end
+
+template "/etc/sysctl.conf" do
+  source "sysctl.conf.erb"
+  owner "root"
+  group "root"
+  mode 0644
+  notifies :restart, resources(:service => 'procps'), :immediately
+end
