@@ -10,17 +10,19 @@ user node['user'] do
   not_if("ls /home | grep #{node['user']}")
 end
 
-# group node["authorization"]["sudo"]["groups"].try(:first) || "sudo" do
-#   action :modify
-#   members node['user']
-# end
+sudo_group = node["authorization"]["sudo"]["groups"].first || "sudo"
 
-# group node["authorization"]["sudo"]["groups"].try(:first) || "sudo" do
-#   action :modify
-#   members "vagrant"
-#   append true
-#   not_if ("ls /home | grep vagrant}")
-# end
+group sudo_group do
+  action :modify
+  members node['user']
+end
+
+group sudo_group do
+  action :modify
+  members "vagrant"
+  append true
+  not_if ("ls /home | grep vagrant}")
+end
 
 execute "generate ssh key for user" do
   user "webmaster"

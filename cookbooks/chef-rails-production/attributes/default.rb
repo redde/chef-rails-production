@@ -1,7 +1,7 @@
 default["user"] = "webmaster"
 
 default["authorization"]["sudo"]["groups"] = ["sudo"]
-default["authorization"]["sudo"]["users"] = [node["user"], "vagrant"]
+default["authorization"]["sudo"]["users"] = [node["user"]]
 default['authorization']['sudo']['passwordless'] = true
 
 default["default_ruby_version"] = "1.9.3-p327"

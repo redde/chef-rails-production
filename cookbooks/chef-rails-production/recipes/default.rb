@@ -14,3 +14,9 @@ end
 
 include_recipe 'mysql'
 include_recipe 'mysql::server' if node['database']['server'] == 'true'
+
+template "/home/#{node['user']}/projects/#{node['app_name']}/shared/config/database.yml" do
+  user node['user']
+  owner node['user']
+  source "database.yml.erb"
+end
