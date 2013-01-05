@@ -58,10 +58,9 @@ write << "}\n"
 puts "Generated node.json:"
 puts write
 Dir.chdir "/tmp/chef-cookbooks"
-file = File.open("node.json", "w")
-file.write write
-
-sleep 1
+File.open("node.json", "w") do |file|
+  file.write write
+end
 
 puts "=========== Installing chef gem"
 `gem install chef --no-ri --no-rdoc`
