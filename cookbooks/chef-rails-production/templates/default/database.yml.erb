@@ -1,5 +1,6 @@
 production:
-  adapter: mysql2
+  adapter: <%= @db_type %>
+<%= "  encoding: unicode" if @db_type == 'postgresql' %>
   database: <%= node['app_name'].gsub('-', '_') %>_production
   pool: 5
   username: <%= node['app_name'].gsub('-', '_') %>

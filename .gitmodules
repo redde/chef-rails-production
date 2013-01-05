@@ -34,3 +34,6 @@
 [submodule "cookbooks/logrotate"]
 	path = cookbooks/logrotate
 	url = git://github.com/opscode-cookbooks/logrotate.git
+[submodule "cookbooks/postgresql"]
+	path = cookbooks/postgresql
+	url = git://github.com/phlipper/chef-postgresql.git

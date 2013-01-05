@@ -72,7 +72,7 @@ Vagrant::Config.run do |config|
       :app_name => "chef-test",
       :domain_name => "notifu.redde.ru",
       :database => {
-        :type => "postgres",
+        :type => "postgresql",
         :server => "true"
       }
     }

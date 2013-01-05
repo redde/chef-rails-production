@@ -21,6 +21,9 @@ default["mysql"]["server_debian_password"] = node["database"]["password"]
 default["mysql"]["server_root_password"] = node["database"]["password"]
 default["mysql"]["server_repl_password"] = node["database"]["password"]
 
+default["postgresql"]["password"]["postgres"] = node["database"]["password"]
+default["postgresql"]["pg_hba"] = ["host    #{node['app_name'].gsub('-', '_')}_production     #{node['app_name'].gsub('-', '_')}        127.0.0.1/32            #{node['database']['password'].length > 1 ? 'md5' : 'trust'}"]
+
 default["memcached"]["listen"]  = "127.0.0.1"
 
 default["sysctl"]["parameters"]["fs.file-max"] = "65536"
