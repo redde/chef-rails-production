@@ -1,0 +1,6 @@
+{
+  "json_class": "Chef::Role",
+  "name": "appserver",
+  "description": "Rails application server",
+  "run_list": ["recipe[chef-rails-production]"]
+}
