@@ -1,3 +1,11 @@
+puts "=========== Installing Git"
+exec('apt-get install git-core -y -qq;')
+puts "=========== Cloning recipes"
+exec('rm -Rf /tmp/chef-cookbooks')
+exec('cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks;')
+exec('cd /tmp/chef-cookbooks;')
+puts "=========== Running wizard"
+
 app_name = ""
 while app_name.length <= 3
   print "Enter application name (4 chars min): "
@@ -45,5 +53,11 @@ write << "}\n"
 
 puts "Generated node.json:"
 puts write
-file = File.open("node.json", "w")
+file = File.open("/tmp/chef-cookbooks/node.json", "w")
 file.write write
+
+puts "=========== Installing chef gem"
+exec('gem install chef --no-ri --no-rdoc;')
+exec('ln -s /var/lib/gems/1.8/bin/chef-solo /bin;')
+puts "=========== Starting provisioning"
+exec('chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json -l debug;')
