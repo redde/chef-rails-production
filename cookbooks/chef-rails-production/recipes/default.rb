@@ -11,3 +11,6 @@ include_recipe "unicorn"
     action :install
   end
 end
+
+include_recipe 'mysql'
+include_recipe 'mysql::server' if node['database']['server'] == 'true'

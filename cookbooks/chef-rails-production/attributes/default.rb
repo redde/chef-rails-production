@@ -13,3 +13,9 @@ default["rbenv"]["user_installs"] = [
     "local" => node["default_ruby_version"],
   }
 ]
+
+default["database"]["password"] = ""
+
+default["mysql"]["server_debian_password"] = node["database"]["password"]
+default["mysql"]["server_root_password"] = node["database"]["password"]
+default["mysql"]["server_repl_password"] = node["database"]["password"]

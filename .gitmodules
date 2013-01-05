@@ -19,3 +19,9 @@
 [submodule "cookbooks/ohai"]
 	path = cookbooks/ohai
 	url = git://github.com/opscode-cookbooks/ohai.git
+[submodule "cookbooks/mysql"]
+	path = cookbooks/mysql
+	url = git://github.com/opscode-cookbooks/mysql.git
+[submodule "cookbooks/openssl"]
+	path = cookbooks/openssl
+	url = git://github.com/opscode-cookbooks/openssl.git
