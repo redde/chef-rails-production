@@ -12,3 +12,4 @@ depends "nodejs"
 depends "nginx"
 depends "ohai"
 depends "mysql"
+depends 'memcached'

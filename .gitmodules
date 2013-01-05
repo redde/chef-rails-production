@@ -25,3 +25,6 @@
 [submodule "cookbooks/openssl"]
 	path = cookbooks/openssl
 	url = git://github.com/opscode-cookbooks/openssl.git
+[submodule "cookbooks/memcached"]
+	path = cookbooks/memcached
+	url = git://github.com/opscode-cookbooks/memcached.git

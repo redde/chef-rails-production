@@ -19,3 +19,5 @@ default["database"]["password"] = ""
 default["mysql"]["server_debian_password"] = node["database"]["password"]
 default["mysql"]["server_root_password"] = node["database"]["password"]
 default["mysql"]["server_repl_password"] = node["database"]["password"]
+
+default["memcached"]["listen"]  = "127.0.0.1"
