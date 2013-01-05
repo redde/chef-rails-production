@@ -33,7 +33,7 @@ This script makes following with your server:
 * Database
 * * Installs mysql/postgresql client libs depending on `node['database']['type']`, mysql/postgresql
 * * Installs mysql/postgresql server depending on `node['database']['server']`, true/false
-* * creates database.yml, `/home/#{node['user']}/projects/#{node['app_name']}/shared/config/database.yml`
+* * Creates database.yml, `/home/#{node['user']}/projects/#{node['app_name']}/shared/config/database.yml`
 * * Creates user `node['app_name'].gsub('-', '_')` and database `#{node['app_name'].gsub('-', '_')}_production`
 * Installs monit, creates config for unicorn
 * Creates logrotate config for rails app at `/home/#{node['user']}/projects/#{node['app_name']}/shared/logs`
