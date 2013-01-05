@@ -1,0 +1,3 @@
+check process <%= node["app_name"] %>_unicorn with pidfile <%= "/home/#{node['user']}/projects/#{node["app_name"]}/shared/pids/unicorn.pid" %>
+  start program = "/etc/init.d/<%= node["app_name"] %> start"
+  stop program = "/etc/init.d/<%= node["app_name"] %> stop"
