@@ -5,7 +5,7 @@ puts "=========== Installing Git"
 puts "=========== Cloning recipes"
 
 `rm -Rf /tmp/chef-cookbooks`
-`cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks -q`
+`cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks -q && cd /tmp/chef-cookbooks && git submodule init -q`
 
 puts "=========== Running wizard"
 
@@ -62,4 +62,4 @@ file.write write
 puts "=========== Installing chef gem"
 `gem install chef --no-ri --no-rdoc`
 puts "=========== Starting provisioning"
-`chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json -l debug`
+exec('chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json -l debug')
