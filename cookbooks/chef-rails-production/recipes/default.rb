@@ -48,3 +48,12 @@ end
 service "monit" do
   action [:enable, :start]
 end
+
+logrotate_app node["app_name"] do
+  cookbook "logrotate"
+  path "/home/#{node['user']}/projects/#{node['app_name']}/shared/logs"
+  options ["missingok"]
+  frequency "daily"
+  rotate 30
+  create "644 webmaster adm"
+end

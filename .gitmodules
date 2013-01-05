@@ -31,3 +31,6 @@
 [submodule "cookbooks/monit"]
 	path = cookbooks/monit
 	url = git://github.com/phlipper/chef-monit.git
+[submodule "cookbooks/logrotate"]
+	path = cookbooks/logrotate
+	url = git://github.com/opscode-cookbooks/logrotate.git
