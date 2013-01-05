@@ -20,3 +20,16 @@ template "/home/#{node['user']}/projects/#{node['app_name']}/shared/config/datab
   owner node['user']
   source "database.yml.erb"
 end
+
+db_user = node['app_name'].gsub('-', '_')
+db_name = "#{node['app_name'].gsub('-', '_')}_production"
+
+db_sql = <<-SQL
+  CREATE DATABASE IF NOT EXISTS #{db_name};
+  CREATE USER '#{db_user}'@'localhost'#{ " IDENTIFIED BY '#{node["database"]["password"]}'" if node["database"]["password"].size > 0} ;
+  GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' WITH GRANT OPTION;
+SQL
+
+execute "mysql create db and user" do
+  command "mysql -u root -h localhost -e '#{db_sql}' -p #{node['mysql']['server_root_password']}"
+end

@@ -1,7 +1,7 @@
 production:
   adapter: mysql2
-  database: <%= node['app_name'] %>_production
+  database: <%= node['app_name'].gsub('-', '_') %>_production
   pool: 5
-  username: root
-  password:
+  username: <%= node['app_name'].gsub('-', '_') %>
+  password: <%= node['database']['password'] %>
   host: localhost
