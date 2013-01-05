@@ -1,10 +1,12 @@
 #!/usr/bin/env ruby
 
 puts "=========== Installing Git"
-exec('apt-get install git-core -y -qq;')
+`apt-get install git-core -y -qq`
 puts "=========== Cloning recipes"
-exec('rm -Rf /tmp/chef-cookbooks')
-exec('cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks;')
+
+`rm -Rf /tmp/chef-cookbooks`
+`cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks`
+
 puts "=========== Running wizard"
 
 app_name = ""
@@ -58,7 +60,7 @@ file = File.open("/tmp/chef-cookbooks/node.json", "w")
 file.write write
 
 puts "=========== Installing chef gem"
-exec('gem install chef --no-ri --no-rdoc;')
-exec('ln -s /var/lib/gems/1.8/bin/chef-solo /bin;')
+`gem install chef --no-ri --no-rdoc`
+`ln -s /var/lib/gems/1.8/bin/chef-solo /bin`
 puts "=========== Starting provisioning"
-exec('chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json -l debug;')
+`chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json -l debug`
