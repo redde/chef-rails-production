@@ -1,7 +1,7 @@
 ECHO "Installing Git"
 apt-get install git -y -q;
 ECHO "Cloning recipes"
-cd /tmp && git clone git@github.com/redde/chef-rails-production.git chef-cookbooks;
+cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks;
 cd /tmp/chef-cookbooks;
 ECHO "Running wizard"
 ruby wizard.rb;
