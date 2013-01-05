@@ -3,7 +3,7 @@
 	url = git://github.com/opscode-cookbooks/apt.git
 [submodule "cookbooks/sudo"]
 	path = cookbooks/sudo
-	url = git://github.com/opscode-cookbooks/sudo.git
+	url = git://github.com/arrowcircle/chef-sudo.git
 [submodule "cookbooks/ruby_build"]
 	path = cookbooks/ruby_build
 	url = git://github.com/fnichol/chef-ruby_build.git
@@ -30,10 +30,10 @@
 	url = git://github.com/opscode-cookbooks/memcached.git
 [submodule "cookbooks/monit"]
 	path = cookbooks/monit
-	url = git://github.com/phlipper/chef-monit.git
+	url = git://github.com/arrowcircle/chef-monit.git
 [submodule "cookbooks/logrotate"]
 	path = cookbooks/logrotate
 	url = git://github.com/opscode-cookbooks/logrotate.git
 [submodule "cookbooks/postgresql"]
 	path = cookbooks/postgresql
-	url = git://github.com/phlipper/chef-postgresql.git
+	url = git://github.com/arrowcircle/chef-postgresql.git
