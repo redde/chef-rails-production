@@ -5,7 +5,8 @@ puts "=========== Installing Git"
 puts "=========== Cloning recipes"
 
 `rm -Rf /tmp/chef-cookbooks`
-`cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks -q && cd /tmp/chef-cookbooks && git submodule init -q`
+Dir.chdir "/tmp/chef-cookbooks"
+`git clone git://github.com/redde/chef-rails-production.git chef-cookbooks -q && cd /tmp/chef-cookbooks && git submodule init -q`
 
 puts "=========== Running wizard"
 
@@ -56,7 +57,8 @@ write << "}\n"
 
 puts "Generated node.json:"
 puts write
-file = File.open("/tmp/chef-cookbooks/node.json", "w")
+Dir.chdir "/tmp/chef-cookbooks"
+file = File.open("node.json", "w")
 file.write write
 
 sleep 1
