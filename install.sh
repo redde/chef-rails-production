@@ -65,4 +65,4 @@ end
 puts "=========== Installing chef gem"
 `gem install chef --no-ri --no-rdoc`
 puts "=========== Starting provisioning"
-exec('chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json -l debug')
+exec('chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json')
