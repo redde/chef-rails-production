@@ -5,7 +5,6 @@ exec('apt-get install git-core -y -qq;')
 puts "=========== Cloning recipes"
 exec('rm -Rf /tmp/chef-cookbooks')
 exec('cd /tmp && git clone git://github.com/redde/chef-rails-production.git chef-cookbooks;')
-exec('cd /tmp/chef-cookbooks;')
 puts "=========== Running wizard"
 
 app_name = ""
