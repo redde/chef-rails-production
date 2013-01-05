@@ -70,7 +70,7 @@ Vagrant::Config.run do |config|
     # You may also specify custom JSON attributes:
     chef.json = {
       :app_name => "chef-test",
-      :domain_name => "notifu.redde.ru",
+      :domain_name => "chef-test.ru",
       :database => {
         :type => "postgresql",
         :server => "true"
