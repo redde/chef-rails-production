@@ -6,7 +6,7 @@ puts "=========== Cloning recipes"
 
 `rm -Rf /tmp/chef-cookbooks`
 Dir.chdir "/tmp"
-`git clone git://github.com/redde/chef-rails-production.git chef-cookbooks -q && cd /tmp/chef-cookbooks && git submodule init -q`
+`git clone git://github.com/redde/chef-rails-production.git chef-cookbooks -q && cd /tmp/chef-cookbooks && git submodule init -q && git submodule update -q`
 
 puts "=========== Running wizard"
 
