@@ -61,6 +61,5 @@ file.write write
 
 puts "=========== Installing chef gem"
 `gem install chef --no-ri --no-rdoc`
-`ln -s /var/lib/gems/1.8/bin/chef-solo /bin`
 puts "=========== Starting provisioning"
 `chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json -l debug`
