@@ -1,0 +1,33 @@
+upstream <%= node['app_name'] %> {
+  server unix:/home/webmaster/projects/<%= node['app_name'] %>/shared/unicorn.sock fail_timeout=0;
+}
+
+server {
+  server_name  www.<%= node['domain_name'] %>;
+  return 301 $scheme://<%= node['domain_name'] %>$request_uri;
+}
+
+server {
+  listen 80 default deferred;
+  server_name <%= node['domain_name'] %>;
+  root /home/webmaster/projects/<%= node['app_name'] %>/current/public;
+
+  location ^~ /assets/ {
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
+  }
+
+  try_files $uri/index.html $uri @unicorn;
+  location @unicorn {
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    proxy_pass http://<%= node['app_name'] %>;
+  }
+
+  error_page 500 502 503 504 /500.html;
+  error_page 404 /404.html;
+  client_max_body_size 4G;
+  keepalive_timeout 10;
+}

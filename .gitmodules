@@ -13,3 +13,9 @@
 [submodule "cookbooks/nodejs"]
 	path = cookbooks/nodejs
 	url = git://github.com/mdxp/nodejs-cookbook.git
+[submodule "cookbooks/nginx"]
+	path = cookbooks/nginx
+	url = git://github.com/opscode-cookbooks/nginx.git
+[submodule "cookbooks/ohai"]
+	path = cookbooks/ohai
+	url = git://github.com/opscode-cookbooks/ohai.git
