@@ -21,7 +21,7 @@ group sudo_group do
   action :modify
   members "vagrant"
   append true
-  not_if ("ls /home | grep vagrant")
+  only_if ("ls /home | grep vagrant")
 end
 
 execute "generate ssh key for user" do
