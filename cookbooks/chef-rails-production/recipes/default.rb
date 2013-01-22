@@ -7,7 +7,7 @@ include_recipe "nginx::default"
 include_recipe "unicorn"
 include_recipe "memcached"
 
-%w{imagemagick libmagickcore-dev libmagickwand-dev}.each do |pkg|
+%w{imagemagick libmagickcore-dev libmagickwand-dev optipng jpegoptim}.each do |pkg|
   package pkg do
     action :install
   end
