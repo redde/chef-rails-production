@@ -66,6 +66,7 @@ puts "=========== Installing chef gem"
 `gem install chef --no-ri --no-rdoc`
 puts "Server is now ready to start provisioning"
 puts "Please revise node.json and correct it for your needs"
+puts "Warning, please your ssh keys to node.json or you will not be able to connect as node['user']"
 puts "You can see more options in node.json.sample"
 puts "=========== Please modify generated /tmp/chef-cookbooks/node.json and run "
 puts 'chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json'
