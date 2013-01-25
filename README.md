@@ -5,6 +5,8 @@ It's developed for Ubuntu/Debian systems, but may work anywhere.
 
 # Installation
 
+You need to have ruby and rubygems installed on the server.
+
 Execute this string as a root on the server, then follow the wizard:
 
     curl https://raw.github.com/redde/chef-rails-production/master/install.rb > install.rb && ruby install.rb
@@ -29,7 +31,7 @@ This script makes following with your server:
 * * Creates unicorn.rb, `/home/#{node['user']}/projects/#{node['app_name']}/shared/config/unicorn.rb`
 * Creates dir structure for rails app in `/home/#{node['user']}/projects/#{node['app_name']}`
 * Installs memcached, listening on 127.0.0.1
-* Installs imagemagick and libs for image processing
+* Installs imagemagick, optipng, jpegoptim and libs for image processing
 * Database
 * * Installs mysql/postgresql client libs depending on `node['database']['type']`, mysql/postgresql
 * * Installs mysql/postgresql server depending on `node['database']['server']`, true/false
