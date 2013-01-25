@@ -64,23 +64,10 @@ end
 
 puts "=========== Installing chef gem"
 `gem install chef --no-ri --no-rdoc`
-
-run = nil
-while run.nil?
-  printf "Do you want to run provisioning with this node.json?[y/n]: "
-  run_string = gets.strip
-  case run_string
-  when "y" then run = true
-  when "n" then run = false
-  end
-end
-case run
-  when true
-    puts "=========== Starting provisioning"
-    exec('chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json')
-  when false
-    puts "=========== Please modify generated /tmp/chef-cookbooks/node.json and run "
-    puts 'chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json'
-    puts "======= or"
-    puts "/tmp/chef-cookbooks/cheffy.sh"
-end
+puts "Server is now ready to start provisioning"
+puts "Please revise node.json and correct it for your needs"
+puts "You can see more options in node.json.sample"
+puts "=========== Please modify generated /tmp/chef-cookbooks/node.json and run "
+puts 'chef-solo -c /tmp/chef-cookbooks/solo.rb -j /tmp/chef-cookbooks/node.json'
+puts "======= or"
+puts "/tmp/chef-cookbooks/cheffy.sh"

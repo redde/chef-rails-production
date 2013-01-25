@@ -63,20 +63,20 @@ Vagrant::Config.run do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "cookbooks"
-    chef.add_recipe "chef-rails-production"
+  # config.vm.provision :chef_solo do |chef|
+  #   chef.cookbooks_path = "cookbooks"
+  #   chef.add_recipe "chef-rails-production"
 
-    # You may also specify custom JSON attributes:
-    chef.json = {
-      :app_name => "chef-test",
-      :domain_name => "chef-test.ru",
-      :database => {
-        :type => "postgresql",
-        :server => "true"
-      }
-    }
-  end
+  #   # You may also specify custom JSON attributes:
+  #   chef.json = {
+  #     :app_name => "chef-test",
+  #     :domain_name => "chef-test.ru",
+  #     :database => {
+  #       :type => "postgresql",
+  #       :server => "true"
+  #     }
+  #   }
+  # end
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).

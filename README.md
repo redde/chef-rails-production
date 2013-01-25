@@ -7,7 +7,7 @@ It's developed for Ubuntu/Debian systems, but may work anywhere.
 
 Execute this string as a root on the server, then follow the wizard:
 
-    curl https://raw.github.com/redde/chef-rails-production/master/install.sh > install.rb && ruby install.rb
+    curl https://raw.github.com/redde/chef-rails-production/master/install.rb > install.rb && ruby install.rb
 
 # What inside?
 This script makes following with your server:
@@ -25,7 +25,7 @@ This script makes following with your server:
 * Installs nginx from package
 * Unicorn
 * * Creates nginx site for unicorn
-* * Creates init script for unicorn 
+* * Creates init script for unicorn
 * * Creates unicorn.rb, `/home/#{node['user']}/projects/#{node['app_name']}/shared/config/unicorn.rb`
 * Creates dir structure for rails app in `/home/#{node['user']}/projects/#{node['app_name']}`
 * Installs memcached, listening on 127.0.0.1

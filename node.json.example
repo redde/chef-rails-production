@@ -1,0 +1,22 @@
+{
+  "run_list":["role[appserver]"],
+  "app_name": "test",
+  "domain_name": "test.com",
+  "database": {
+    "type": "postgresql",
+    "server": "true",
+    "password": "testpassword"
+  },
+  "default_ruby_version": "1.9.3-p327",
+  "user": "webmaster",
+  "users": {
+    "authorized_keys": [
+      "key1",
+      "key2"
+    ],
+    "known_hosts": [
+      "host1",
+      "host2"
+    ]
+  }
+}
